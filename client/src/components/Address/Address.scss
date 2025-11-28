@@ -1,0 +1,23 @@
+@use "../../assets/scss/variables" as vars;
+
+.componentAddress{
+    display: flex;
+    align-items: center;
+    gap: 10px;
+    width: fit-content;
+    margin: 0 auto;
+
+    img{
+        width: 20px;
+        height: 20px;
+    }
+    
+    p{
+        font-size: 16px;
+        line-height: 77%;
+        color: #fff;
+        opacity: 0.5;
+
+    }
+    
+}

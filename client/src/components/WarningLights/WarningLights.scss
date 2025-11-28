@@ -1,0 +1,101 @@
+@use "../../assets/scss/variables" as vars;
+
+.componentWarningLights{
+    width: fit-content;
+    min-width: 250px;
+    margin: 0 auto;
+    height: 100%;
+    display: flex;
+    align-items: flex-end;
+    justify-content: center;
+    padding-bottom: 80px;
+    position: relative;
+
+    ul{
+        list-style: none;
+        display: flex;
+        align-items: center;
+        gap: 17px;
+        justify-content: center;
+        flex-wrap: wrap;
+        
+        li{
+            width: 12%;
+
+            img{
+                width: 25px;
+                height: 25px;
+                object-fit: contain;
+                object-position: center;
+                transition: all 0.3s ease;
+                -webkit-mask-image: url('data:image/svg+xml;utf8,<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M0 0h24v24H0z" fill="white"/></svg>');
+                mask-image: url('data:image/svg+xml;utf8,<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M0 0h24v24H0z" fill="white"/></svg>');
+                -webkit-mask-size: contain;
+                mask-size: contain;
+                -webkit-mask-repeat: no-repeat;
+                mask-repeat: no-repeat;
+                -webkit-mask-position: center;
+                mask-position: center;
+
+                &:not(.active){
+                    filter: brightness(0) invert(1);
+                    opacity: 0.5;
+                }
+
+                &.active {
+                    opacity: 1;
+                }
+            }
+        }
+    }
+
+    .warningOverlay {
+        position: absolute;
+        top: 0;
+        left: 0;
+        z-index: 9999;
+        width: 100%;
+        height: 100%;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+
+        &__wrapper{
+            animation: fadeInOut 5s ease forwards;
+        }
+
+        &:before{
+            content: '';
+            position: fixed;
+            top: 0;
+            left: 0;
+            width: 100vw;
+            height: 100vh;
+            background-color: rgba(0, 0, 0, 0.7);
+            animation: fadeInOut 5s ease forwards;
+        }
+      
+        img {
+            width: 80px;
+            height: 80px;
+            object-fit: contain;
+            animation: pulse 1.5s ease-in-out infinite;
+        }
+    }
+      
+        @keyframes fadeInOut {
+            0% { opacity: 0; transform: scale(0.8); }
+            10% { opacity: 1; transform: scale(1); }
+            90% { opacity: 1; transform: scale(1); }
+            100% { opacity: 0; transform: scale(0.8); }
+        }
+
+
+        // Effetto pulse continuo
+        @keyframes pulse {
+            0% { transform: scale(1); }
+            50% { transform: scale(1.2); }
+            100% { transform: scale(1); }
+        }
+      
+}

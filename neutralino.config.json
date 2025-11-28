@@ -1,0 +1,35 @@
+{
+  "applicationId": "it.cyberpandino.cluster",
+  "version": "1.0.0",
+  "defaultMode": "window",
+  "documentRoot": "/resources/",
+  "url": "http://localhost:5173",
+  "enableInspector": true,
+  "modes": {
+    "window": {
+      "title": "Cyberpandino Cluster",
+      "exitProcessOnClose": true,
+      "width": 1920,
+      "height": 580,
+      "minWidth": 400,
+      "minHeight": 400,
+      "resizable": true,
+      "icon": "/resources/icon.png",
+      "alwaysOnTop": false
+    }
+  },
+  "cli": {
+    "binaryName": "neutralino",
+    "resourcesPath": "resources/",
+    "extensionsPath": "extensions/",
+    "clientLibrary": "resources/neutralino.js",
+    "binaryVersion": "5.3.0",
+    "clientVersion": "5.3.0"
+  },
+  "nativeAllowList": [
+    "app.*",
+    "os.*",
+    "window.*",
+    "computer.*"
+  ]
+}

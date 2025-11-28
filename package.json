@@ -1,0 +1,45 @@
+{
+  "name": "Cyberpandino Cluster",
+  "productName": "Cyberpandino Cluster",
+  "version": "0.9.0",
+  "description": "",
+  "scripts": {
+    "install:all": "npm install && npm --prefix client install && npm --prefix server install",
+    "start": "concurrently -k \"npm run server\" \"npm run client\" \"npm run app\"",
+    "dev": "concurrently -k \"npm run client\" \"npm run app\"",
+    "client": "cd client && npm run dev",
+    "server": "node server/server.js",
+    "app": "wait-on tcp:5173 && .\\bin\\neutralino-win_x64.exe --load-dir-res --path=. --url=http://localhost:5173"
+  },
+  "keywords": [
+    "automotive",
+    "obd2",
+    "raspberry-pi",
+    "fiat-panda",
+    "digital-cluster",
+    "gpio"
+  ],
+  "author": "Cyberpandino (Matteo Errera, Roberto Zaccardi, Ludovico Verde)",
+  "license": "GPL-3.0-or-later",
+  "contributors": [
+    {
+      "name": "Matteo Errera",
+      "url": "https://github.com/matteoerrera"
+    },
+    {
+      "name": "Roberto Zaccardi",
+      "url": "https://github.com/rzaccardi"
+    },
+    {
+      "name": "Ludovico Verde",
+      "url": "https://www.instagram.com/ludovico.verdee/"
+    }
+  ],
+  "type": "commonjs",
+  "devDependencies": {
+    "concurrently": "^9.2.1",
+    "cross-env": "^10.1.0",
+    "wait-on": "^8.0.5",
+    "@neutralinojs/neu": "^11.0.0" 
+  }
+}

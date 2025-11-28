@@ -1,0 +1,154 @@
+.splash-container {
+  position: relative;
+  width: 100vw;
+  height: 100vh;
+  overflow: hidden;
+}
+
+.splash-overlay {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100vw;
+  height: 100vh;
+  background: #000;
+  z-index: 9999;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  opacity: 1;
+  transition: opacity 0.5s ease-out;
+}
+
+.splash-overlay.fade-out {
+  opacity: 0;
+}
+
+.splash-image,
+.splash-video {
+  width: 100vw;
+  height: 100vh;
+  object-fit: cover;
+  object-position: center;
+  background: #000;
+  user-select: none;
+  pointer-events: none;
+}
+
+.splash-video {
+  display: block;
+}
+
+.splash-loading {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 20px;
+  color: white;
+  z-index: 1;
+
+  p {
+    font-family: 'Arial', sans-serif;
+    font-size: 18px;
+    font-weight: 300;
+    margin: 0;
+    text-shadow: 0 0 10px rgba(0, 0, 0, 0.5);
+  }
+}
+
+
+
+.loading-spinner {
+  width: 50px;
+  height: 50px;
+  border: 3px solid rgba(255, 255, 255, 0.3);
+  border-top: 3px solid #ffffff;
+  border-radius: 50%;
+  animation: spin 1s linear infinite;
+}
+
+.splash-app-info {
+  position: absolute;
+  bottom: 30px;
+  left: 50%;
+  transform: translateX(-50%);
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 4px;
+  color: rgba(255, 255, 255, 0.7);
+  z-index: 1;
+  font-family: 'Arial', sans-serif;
+
+  .splash-app-name {
+    font-size: 12px;
+    font-weight: 400;
+    letter-spacing: 0.5px;
+    text-shadow: 0 0 10px rgba(0, 0, 0, 0.5);
+  }
+
+  .splash-app-version {
+    font-size: 10px;
+    font-weight: 300;
+    opacity: 0.8;
+    text-shadow: 0 0 10px rgba(0, 0, 0, 0.5);
+  }
+}
+
+.app-content {
+  position: relative;
+  width: 100vw;
+  height: 100vh;
+}
+
+@keyframes spin {
+  0% { 
+    transform: rotate(0deg); 
+  }
+  100% { 
+    transform: rotate(360deg); 
+  }
+}
+
+/* Effetti rimossi - nessuna animazione */
+
+/* Responsive per dispositivi mobili */
+@media (max-width: 768px) {
+  .splash-image,
+  .splash-video {
+    object-fit: cover;
+  }
+  
+  .splash-loading p {
+    font-size: 16px;
+  }
+  
+  .loading-spinner {
+    width: 40px;
+    height: 40px;
+  }
+
+  .splash-app-info {
+    bottom: 20px;
+
+    .splash-app-name {
+      font-size: 11px;
+    }
+
+    .splash-app-version {
+      font-size: 9px;
+    }
+  }
+}
+
+.splash-container.splash-active {
+  overflow: hidden;
+}
+
+body.splash-active {
+  overflow: hidden;
+} 

@@ -1,0 +1,9 @@
+blank_issues_enabled: true
+contact_links:
+  - name: 📚 Documentazione
+    url: https://github.com/cyberpandino/cluster/blob/main/README.md
+    about: Consulta la documentazione completa del progetto
+  - name: 💬 Discussioni
+    url: https://github.com/cyberpandino/cluster/discussions
+    about: Partecipa alle discussioni della community (se abilitato)
+
